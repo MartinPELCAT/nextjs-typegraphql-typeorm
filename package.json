@@ -25,6 +25,7 @@
     "graphql": "^15.3.0",
     "jsonwebtoken": "^8.5.1",
     "next": "^9.5.5",
+    "pg": "^8.4.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "reflect-metadata": "^0.1.13",

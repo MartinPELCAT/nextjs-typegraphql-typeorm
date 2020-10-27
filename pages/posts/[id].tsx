@@ -4,10 +4,6 @@ type Props = {
   postData: string;
 };
 
-type Params = {
-  id: string;
-};
-
 export default function Post({ postData }: Props) {
   return <div>{JSON.stringify(postData)}</div>;
 }

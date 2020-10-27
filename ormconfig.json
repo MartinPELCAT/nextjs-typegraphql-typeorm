@@ -9,12 +9,7 @@
   "logging": "all",
   "cache": true,
   "logger": "file",
-  "entities": ["server/src/entity/**/*.ts"],
-  "migrations": ["server/src/migration/**/*.ts"],
-  "subscribers": ["server/src/subscriber/**/*.ts"],
-  "cli": {
-    "entitiesDir": "apollo/entity",
-    "migrationsDir": "apollo/migration",
-    "subscribersDir": "apollo/subscriber"
-  }
+  "entities": ["server/src/entity/**/*.{ts,js}"],
+  "migrations": ["server/src/migration/**/*.{ts,js}"],
+  "subscribers": ["server/src/subscriber/**/*.{ts,js}"]
 }

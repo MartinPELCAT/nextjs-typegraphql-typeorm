@@ -17,4 +17,9 @@ export default class UserResolver {
     console.log("UserId: ", userId);
     return this.userRepository.find();
   }
+
+  @Query(() => [User])
+  async users() {
+    return [];
+  }
 }

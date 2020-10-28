@@ -8,6 +8,7 @@
     "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.5",
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-decorators": "^7.12.1",
     "apollo-server": "^2.18.2",

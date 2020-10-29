@@ -17,7 +17,7 @@ export type Scalars = {
 
 export type Query = {
   __typename?: "Query";
-  user: User;
+  user?: Maybe<User>;
   users: Array<User>;
 };
 
@@ -58,7 +58,7 @@ export type GetUserQueryVariables = Exact<{
 }>;
 
 export type GetUserQuery = { __typename?: "Query" } & {
-  user: { __typename?: "User" } & UserFieldsFragment;
+  user?: Maybe<{ __typename?: "User" } & UserFieldsFragment>;
 };
 
 export type UserFieldsFragment = { __typename?: "User" } & Pick<

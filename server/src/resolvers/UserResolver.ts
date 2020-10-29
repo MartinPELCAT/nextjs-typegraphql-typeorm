@@ -9,7 +9,7 @@ export default class UserResolver {
     @InjectRepository(User) private readonly userRepository: Repository<User>
   ) {}
 
-  @Query(() => User)
+  @Query(() => User, { nullable: true })
   async user(
     @Arg("userId", () => String)
     userId: string

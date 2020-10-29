@@ -14,7 +14,6 @@ export default class UserResolver {
     @Arg("userId", () => String)
     userId: string
   ): Promise<User> {
-    console.log("UserId: ", userId);
     return this.userRepository.findOne(userId);
   }
 

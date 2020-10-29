@@ -4,7 +4,7 @@ import {
   GetUserQueryVariables,
   GetUsersDocument,
   useGetUserQuery,
-} from "apollo/__generated__";
+} from "@generated";
 import { GetStaticProps } from "next";
 
 type Props = {
@@ -13,10 +13,13 @@ type Props = {
 
 export default function Home({ user }: Props) {
   const { data } = useGetUserQuery();
-  console.log(data);
-  console.log(user.firstName);
 
-  return <div className="text-xl text-red-500">Hello</div>;
+  return (
+    <div className="text-xl text-red-500">
+      Data from hook : {JSON.stringify(data.user)}
+      Data from nextjs props : {JSON.stringify(user)}
+    </div>
+  );
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {

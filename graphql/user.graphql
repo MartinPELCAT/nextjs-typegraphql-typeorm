@@ -1,5 +1,17 @@
 query getUsers {
   users {
-    firstName
+    ...UserFields
   }
+}
+
+query getUser($userId: String!) {
+  user(userId: $userId) {
+    ...UserFields
+  }
+}
+
+fragment UserFields on User {
+  _id
+  firstName
+  lastName
 }

@@ -9,13 +9,13 @@ export default class UserResolver {
     @InjectRepository(User) private readonly userRepository: Repository<User>
   ) {}
 
-  @Query(() => [User])
+  @Query(() => User)
   async user(
     @Arg("userId", () => String)
     userId: string
-  ): Promise<User[]> {
+  ): Promise<User> {
     console.log("UserId: ", userId);
-    return this.userRepository.find();
+    return this.userRepository.findOne(userId);
   }
 
   @Query(() => [User])

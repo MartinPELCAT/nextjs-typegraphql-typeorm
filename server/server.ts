@@ -3,7 +3,7 @@ import { buildSchema } from "type-graphql";
 import next from "next";
 import express from "express";
 import UserResolver from "./src/resolvers/UserResolver";
-import { createConnection, useContainer } from "typeorm";
+import { useContainer } from "typeorm";
 import Container from "typedi";
 
 const nextApp = next({ dev: true });
@@ -18,7 +18,7 @@ export const server = async () => {
      * typeorm setup
      */
 
-    await createConnection();
+    // await createConnection();
 
     /**
      * Typegraphql setup

@@ -1,21 +1,14 @@
 import { gql, useQuery } from "@apollo/client";
 import { client } from "apollo/client";
+import { GetUsersDocument, useGetUsersQuery } from "apollo/__generated__";
 import { GetStaticProps } from "next";
 
 type Props = {
   users: any[];
 };
 
-const QUERY = gql`
-  query getUsers {
-    users {
-      firstName
-    }
-  }
-`;
-
 export default function Home({ users }: Props) {
-  const { data } = useQuery(QUERY);
+  const { data } = useGetUsersQuery();
   console.log(data);
   console.log(users);
 
@@ -24,7 +17,7 @@ export default function Home({ users }: Props) {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const { data } = await client.query({
-    query: QUERY,
+    query: GetUsersDocument,
   });
   return { props: { users: [...data.users, { userName: "Martin" }] } };
 };
